@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ürün Detayları - {{ product.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .product-image {
+            max-height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .details-table {
+            margin-top: 20px;
+        }
+        .details-table th {
+            width: 30%;
+            color: #495057;
+        }
+        .details-table td {
+            width: 70%;
+        }
+        .back-button {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .details-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .details-header {
+            margin-bottom: 20px;
+        }
+        .product-title {
+            color: rgba(255, 0, 119, 0.7);
+        }
+        .text-muted {
+            color: #6c757d!important;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            color: #fff;
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+        @media (max-width: 768px) {
+            .product-image {
+                max-height: 300px;
+            }
+        }
+        .breadcrumb {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/category/{{ product.category }}">Kategori: {{ product.category }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
+            </ol>
+        </nav>
+
+        <!-- Back Button -->
+        <button onclick="window.history.back();" class="btn btn-secondary back-button">Geri</button>
+
+        <div class="details-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{ product.image_url }}" class="product-image" alt="{{ product.title }}">
+                </div>
+                <div class="col-lg-6">
+                    <div class="details-header">
+                        <h2 class="product-title">{{ product.title }}</h2>
+                        <p><small class="text-muted">{{ product.price }} TL</small></p>
+                        <p><small class="text-muted">City: {{ product.city }}</small></p>
+                    </div>
+                    <table class="table details-table">
+                        <tr>
+                            <th>İlan No:</th>
+                            <td>{{ product.ad_no }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
