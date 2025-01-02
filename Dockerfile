@@ -34,3 +34,5 @@ EXPOSE 8000 22
 
 # Command to run both SSH server and the application
 CMD ["/bin/sh", "-c", "/usr/sbin/sshd -D & gunicorn --bind 0.0.0.0:8000 app:app"]
+
+ #docker run --platform linux/amd64 my-image:latest
