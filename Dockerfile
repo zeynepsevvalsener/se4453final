@@ -8,8 +8,14 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory
 WORKDIR /app
 
+# Copy the rest of the application code
+COPY . /app
+
+# Run pip install -r requirements.txt to install dependencies
+RUN pip install -r requirements.txt
+
 # Copy requirements file
-COPY requirements.txt /app/requirements.txt
+#COPY requirements.txt /app/requirements.txt
 
 # Install dependencies and OpenSSH server
 RUN apt-get update && apt-get install -y \
@@ -25,9 +31,6 @@ RUN mkdir /var/run/sshd && \
 
 # Expose ports for the application and SSH
 EXPOSE 8000 22
-
-# Copy the rest of the application code
-COPY . /app
 
 # Command to run both SSH server and the application
 CMD ["/bin/sh", "-c", "/usr/sbin/sshd -D & gunicorn --bind 0.0.0.0:8000 app:app"]
