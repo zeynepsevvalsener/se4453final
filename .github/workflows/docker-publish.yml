@@ -41,7 +41,7 @@ jobs:
     - name: 'Deploy from ACR to App Service'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'se4453final-webapp'
+        app-name: 'se4453final'
         images: 'se4453final.azurecr.io/final-app:${{ github.sha }}'
 
     # Step 7: Logout from Azure
