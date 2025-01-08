@@ -111,3 +111,14 @@ While the project requirements do not specify a particular application type, a s
    ```bash
    git clone <repository-url>
    cd <repository-name>
+
+---
+
+## Live Demo
+
+You can access the live demo of this application at the following link:
+
+- [Azure Deployed Application](https://se4453final.azurewebsites.net)
+
+---
+
