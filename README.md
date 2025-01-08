@@ -37,28 +37,28 @@ This application is designed as part of an academic project and adheres to indus
     └── search.html               # Search results page template
 ---
 
-### Dockerfile
+## Dockerfile
 - Builds a Docker image of the web application.
 - Exposes ports for SSH and web server communication.
 - Includes an initialization script for setting up SSH and starting the web server.
 
-### Azure Container Registry (ACR)
+## Azure Container Registry (ACR)
 - Stores the Docker image securely.
 - Provides seamless integration with Azure App Services.
 
-### GitHub Actions Workflow
+## GitHub Actions Workflow
 - Automates the process of:
   - Authenticating with Azure using `AZURE_CREDENTIALS`.
   - Building and pushing the Docker image to ACR.
   - Triggering deployment to Azure App Service.
 
-### Deployment
+## Deployment
 - Utilizes **User Assigned Identity** for secure communication between Azure services.
 - Ensures end-to-end automation of the deployment pipeline.
 
 ---
 
-## Features
+# Features
 
 - **Continuous Integration/Continuous Deployment (CI/CD)**:
   - Streamlined automation using GitHub Actions.
