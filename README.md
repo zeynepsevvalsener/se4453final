@@ -35,6 +35,7 @@ This application is designed as part of an academic project and adheres to indus
     ├── detail.html               # Product detail page template
     ├── homepage.html             # Home page template
     └── search.html               # Search results page template
+---
 
 ### Dockerfile
 - Builds a Docker image of the web application.
