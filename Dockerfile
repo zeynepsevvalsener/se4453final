@@ -33,6 +33,6 @@ RUN mkdir /var/run/sshd && \
 EXPOSE 80 22
 
 # Command to run both SSH server and the application
-CMD ["/bin/sh", "-c", "/usr/sbin/sshd -D & gunicorn --bind 0.0.0.0:8000 app:app"]
+CMD ["/bin/sh", "-c", "/usr/sbin/sshd -D & gunicorn --bind 0.0.0.0:80 app:app"]
 
  #docker run --platform linux/amd64 my-image:latest
