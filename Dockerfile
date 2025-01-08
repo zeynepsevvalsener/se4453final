@@ -30,7 +30,7 @@ RUN mkdir /var/run/sshd && \
     sed -i 's/UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
 
 # Expose ports for the application and SSH
-EXPOSE 8000 22
+EXPOSE 80 22
 
 # Command to run both SSH server and the application
 CMD ["/bin/sh", "-c", "/usr/sbin/sshd -D & gunicorn --bind 0.0.0.0:8000 app:app"]
